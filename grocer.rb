@@ -51,7 +51,6 @@ def apply_clearance(cart)
 end
 
 def checkout(cart, coupons)
-<<<<<<< HEAD
   new_cart = consolidate_cart(cart)
   apply_coupons(new_cart, coupons)
   apply_clearance(new_cart)
@@ -62,23 +61,5 @@ def checkout(cart, coupons)
   if total > 100
     total = total * 90/100
   end
-=======
-  #call the consolidate to get the count item first
-  new_cart = consolidate_cart(cart)
-  #apply coupon to the new cart
-  apply_coupons(new_cart, coupons)
-  #apply clearance after discount from coupon
-  apply_clearance(new_cart)
-
-total = 0
-  new_cart.each do |name, hash|
-    total += (hash[:price] * hash[:count])
-  end
-
-if total >= 100
-    total *= 0.9
-  end
-
->>>>>>> 3d68e6b03b36e71a983b52589e86635a0ef5bba7
   total
 end
